@@ -23,7 +23,7 @@ RUN echo "/usr/sbin/crond" >> /init.sh
 RUN echo "" >> /init.sh
 RUN echo "/docker-entrypoint.sh postgres" >> /init.sh
 RUN echo "" >> /init.sh
-RUN echo "sed -i 's/#tcp_keepalives_idle = 0/tcp_keepalives_idle = 300/g' /var/lib/postgresql/data/postgresql.conf" >> /init.sh
+RUN echo "sed -i 's/#tcp_keepalives_idle = 0/tcp_keepalives_idle = 60/g' /var/lib/postgresql/data/postgresql.conf" >> /init.sh
 RUN echo "sed -i 's/#tcp_keepalives_interval = 0/tcp_keepalives_interval = 5/g' /var/lib/postgresql/data/postgresql.conf" >> /init.sh
 RUN echo "sed -i 's/#tcp_keepalives_count = 0/tcp_keepalives_count = 5/g' /var/lib/postgresql/data/postgresql.conf" >> /init.sh
 RUN chmod 777 /init.sh
